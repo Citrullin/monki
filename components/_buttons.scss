@@ -1,0 +1,35 @@
+.button{
+  border-right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  border-left: 0;
+  border-top: 0;
+}
+
+.button--brand{
+  background: $brand-color;
+  border-bottom: 2px solid $brand-darker-color;
+}
+
+.button--success{
+  background: $success-color;
+  border-bottom: 2px solid $success-darker-color;
+}
+
+.button--warn{
+  background: $warn-color;
+  border-bottom: 2px solid $warn-darker-color;
+}
+
+.button--danger{
+  background: $danger-color;
+  border-bottom: 2px solid $danger-darker-color;
+}
+
+[color="bright"]{
+  color: $bright;
+}
+[color="bright-light"]{
+  color: $bright-light;
+}
