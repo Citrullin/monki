@@ -2,7 +2,7 @@ Monki.css
 
 Many years ago: You started working with HTML and CSS. You styled your headlines, your content, your sidebar and so on... It was a perfect world.
 Now: This CSS file is growing. You haven't enough time to think about the structure. What happens? You add one more line
-to your CSS. One more specific selector. Your CSS file has 3000 lines. You hates CSS. The css isn't any more maintainable.
+to your CSS. One more specific selector. Your CSS file has 3000 lines. You're hating your CSS. The css isn't any more maintainable.
 Monki is the solution for this problem. Monki is a css framework that handles the css monkey work for you.
 
 
