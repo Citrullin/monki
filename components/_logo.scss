@@ -1,4 +1,4 @@
-header{
+.header{
   background: $grey-darker;
   height: 55px;
   padding-top: 10px;
@@ -9,7 +9,7 @@ header{
   position: fixed;
 }
 
-[logo]{
+.logo{
   background: $bright-lighter;
   height: 35px;
   width: 35px;

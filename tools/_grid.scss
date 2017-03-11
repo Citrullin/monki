@@ -1,11 +1,11 @@
 @mixin generateGrid($number, $padding, $min_width: false, $max_width: false, $prefix: false){
-  row{
+  .o-row{
     font-size: 0;
   }
   @if not($min_width){
     //@media (max-width: $max_width){
       @for $i from 1 through $number{
-        [grid-#{$prefix}="#{$i}"]{
+        .o-grid-#{$prefix}-#{$i}{
           width: ($i/$number)*100%;
           display: inline-block;
           padding-right: $padding;
@@ -16,7 +16,7 @@
   }
   @else if not($min_width && $max_width){
     @for $i from 1 through $number{
-      [grid="#{$i}"]{
+      .o-grid-#{$i}{
         width: ($i/$number)*100%;
         display: inline-block;
         padding-right: $padding;
@@ -27,7 +27,7 @@
   @else if not($max_width){
     @media (min-width: $min_width){
       @for $i from 1 through $number{
-        [grid-#{$prefix}="#{$i}"]{
+        .o-grid-#{$prefix}-#{$i}{
           width: ($i/$number)*100%;
           display: inline-block;
           padding-right: $padding;
@@ -39,7 +39,7 @@
   @else if ($min_width && $max_width){
     @media (min-width: $min_width) and (max-width: $max_width){
       @for $i from 1 through $number{
-        [grid-#{$prefix}="#{$i}"]{
+        .o-grid-#{$prefix}-#{$i}{
           width: ($i/$number)*100%;
           display: inline-block;
           padding-right: $padding;

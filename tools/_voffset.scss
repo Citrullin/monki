@@ -1,6 +1,6 @@
 @mixin generateVerticalOffset($number, $base_padding, $type){
   @for $i from 1 through $number{
-    [voffset="#{$i}"]{
+    .o-voffset-#{$i}{
       margin-top: ($i*$base_padding)+$type;
     }
   }
