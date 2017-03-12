@@ -3,8 +3,9 @@
     //@media (max-width: $max_width){
       @for $i from 1 through $number{
         .o-grid-#{$prefix}-#{$i}{
-          width: ($i/$number)*100%;
-          display: inline-block;
+          //width: ($i/$number)*100%;
+          flex: $i;
+
           padding-right: $padding;
           padding-left: $padding;
         }
@@ -14,8 +15,9 @@
   @else if not($min_width && $max_width){
     @for $i from 1 through $number{
       .o-grid-#{$i}{
-        width: ($i/$number)*100%;
-        display: inline-block;
+        //width: ($i/$number)*100%;
+        flex: $i;
+
         padding-right: $padding;
         padding-left: $padding;
       }
@@ -25,8 +27,9 @@
     @media (min-width: $min_width){
       @for $i from 1 through $number{
         .o-grid-#{$prefix}-#{$i}{
-          width: ($i/$number)*100%;
-          display: inline-block;
+          //width: ($i/$number)*100%;
+          flex: $i;
+
           padding-right: $padding;
           padding-left: $padding;
         }
@@ -37,8 +40,9 @@
     @media (min-width: $min_width) and (max-width: $max_width){
       @for $i from 1 through $number{
         .o-grid-#{$prefix}-#{$i}{
-          width: ($i/$number)*100%;
-          display: inline-block;
+          //width: ($i/$number)*100%;
+          flex: $i;
+
           padding-right: $padding;
           padding-left: $padding;
         }
