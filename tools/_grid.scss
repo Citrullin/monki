@@ -1,7 +1,4 @@
 @mixin generateGrid($number, $padding, $min_width: false, $max_width: false, $prefix: false){
-  .o-row{
-    font-size: 0;
-  }
   @if not($min_width){
     //@media (max-width: $max_width){
       @for $i from 1 through $number{

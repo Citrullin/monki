@@ -1,3 +1,6 @@
+.o-row{
+  font-size: 0;
+}
 
 .o-container{
 
@@ -5,17 +8,17 @@
 
 //Generate Grid
 @if ($extra-small){
-  @include generateGrid(24, $extra-small_padding, false, $extra-small_max, 'xs');
+  @include generateGrid($grid-xs, $extra-small_padding, false, $extra-small_max, 'xs');
 }
 @if ($small){
-  @include generateGrid(24, $small_padding, $small_min, $small_max, 'sm');
+  @include generateGrid($grid-sm, $small_padding, $small_min, $small_max, 'sm');
 }
 @if ($medium){
-  @include generateGrid(24, $medium_padding, $medium_min, $medium_max, 'md');
+  @include generateGrid($grid-md, $medium_padding, $medium_min, $medium_max, 'md');
 }
 @if ($large){
-  @include generateGrid(24, $large_padding, $large_min, false, 'lg');
+  @include generateGrid($grid-lg, $large_padding, $large_min, false, 'lg');
 }
 @if ($none){
-  @include generateGrid(24, $none_padding, false, false);
+  @include generateGrid($grid-none, $none_padding, false, false);
 }
