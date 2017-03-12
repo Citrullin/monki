@@ -1,21 +1,64 @@
-@mixin generateGrid($number, $padding, $min_width: false, $max_width: false, $prefix: false){
+@mixin generateGrid($number, $padding, $min_width: false, $max_width: false, $use-flex-basis: false, $prefix: false){
   @if not($min_width){
-    //@media (max-width: $max_width){
+    @media (max-width: $max_width){
+      .o-container-#{$prefix}{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        justify-content: space-around;
+      }
+
+      .o-container-#{$prefix}--column{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+      }
+
       @for $i from 1 through $number{
+        @if($use-flex-basis){
+          .o-flex-basis-#{$prefix}-#{($i/$number)*100}{
+            flex-basis: ($i/$number)*100%;
+          }
+        }
+
         .o-grid-#{$prefix}-#{$i}{
-          //width: ($i/$number)*100%;
           flex: $i;
 
           padding-right: $padding;
           padding-left: $padding;
         }
       }
-    //}
+    }
   }
   @else if not($min_width && $max_width){
+
     @for $i from 1 through $number{
+      @if($use-flex-basis){
+        .o-flex-basis-#{($i/$number)*100}{
+          flex-basis: ($i/$number)*100%;
+        }
+      }
+
       .o-grid-#{$i}{
-        //width: ($i/$number)*100%;
         flex: $i;
 
         padding-right: $padding;
@@ -25,9 +68,46 @@
   }
   @else if not($max_width){
     @media (min-width: $min_width){
+      .o-container-#{$prefix}{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        justify-content: space-around;
+      }
+
+      .o-container-#{$prefix}--column{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+      }
+
       @for $i from 1 through $number{
+        @if($use-flex-basis){
+          .o-flex-basis-#{$prefix}-#{($i/$number)*100}{
+            flex-basis: ($i/$number)*100%;
+          }
+        }
+
         .o-grid-#{$prefix}-#{$i}{
-          //width: ($i/$number)*100%;
           flex: $i;
 
           padding-right: $padding;
@@ -38,9 +118,46 @@
   }
   @else if ($min_width && $max_width){
     @media (min-width: $min_width) and (max-width: $max_width){
+      .o-container-#{$prefix}{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        justify-content: space-around;
+      }
+
+      .o-container-#{$prefix}--column{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+      }
+
       @for $i from 1 through $number{
+        @if($use-flex-basis){
+          .o-flex-basis-#{$prefix}-#{($i/$number)*100}{
+            flex-basis: ($i/$number)*100%;
+          }
+        }
+
         .o-grid-#{$prefix}-#{$i}{
-          //width: ($i/$number)*100%;
           flex: $i;
 
           padding-right: $padding;

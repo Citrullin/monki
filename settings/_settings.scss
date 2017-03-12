@@ -5,11 +5,17 @@ $medium     : true;
 $large      : true;
 $none       : false;
 
-$grid-xs: 6;
-$grid-sm: 12;
-$grid-md: 24;
-$grid-lg: 24;
-$grid-none: 24;
+$extra-small-flex-basis: true;
+$small-flex-basis: false;
+$medium-flex-basis: false;
+$large-flex-basis: false;
+$none-flex-basis: false;
+
+$grid-xs: 4;
+$grid-sm: 6;
+$grid-md: 12;
+$grid-lg: 12;
+$grid-none: 12;
 
 $extra-small_max    : 768px;
 $small_min          : 769px;
@@ -54,4 +60,4 @@ $bright-lighter:  #fff;
 $bright-light:    darken($bright-lighter, 10%);
 $bright:          darken($bright-lighter, 15%);
 $bright-dark:     darken($bright-lighter, 20%);
-$bright-darker:     darken($bright-lighter, 25%);
+$bright-darker:   darken($bright-lighter, 25%);

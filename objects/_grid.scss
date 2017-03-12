@@ -1,4 +1,4 @@
-.o-row{
+.o-container{
   padding: 0;
   margin: 0;
   list-style: none;
@@ -10,26 +10,39 @@
   display: flex;
 
   -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   justify-content: space-around;
 }
 
-.o-container{
+.o-container--column{
+  padding: 0;
+  margin: 0;
+  list-style: none;
 
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  justify-content: space-around;
 }
 
 //Generate Grid
 @if ($extra-small){
-  @include generateGrid($grid-xs, $extra-small_padding, false, $extra-small_max, 'xs');
+  @include generateGrid($grid-xs, $extra-small_padding, false, $extra-small_max, $extra-small-flex-basis, 'xs');
 }
 @if ($small){
-  @include generateGrid($grid-sm, $small_padding, $small_min, $small_max, 'sm');
+  @include generateGrid($grid-sm, $small_padding, $small_min, $small_max, $small-flex-basis, 'sm');
 }
 @if ($medium){
-  @include generateGrid($grid-md, $medium_padding, $medium_min, $medium_max, 'md');
+  @include generateGrid($grid-md, $medium_padding, $medium_min, $medium_max, $medium-flex-basis, 'md');
 }
 @if ($large){
-  @include generateGrid($grid-lg, $large_padding, $large_min, false, 'lg');
+  @include generateGrid($grid-lg, $large_padding, $large_min, false, $large-flex-basis, 'lg');
 }
 @if ($none){
-  @include generateGrid($grid-none, $none_padding, false, false);
+  @include generateGrid($grid-none, $none_padding, false, $none-flex-basis, false);
 }
