@@ -14,7 +14,7 @@
 
         -webkit-flex-flow: row wrap;
         flex-flow: row wrap;
-        justify-content: space-around;
+        justify-content: $default-justify-content;
       }
 
       .o-container-#{$prefix}--column{
@@ -30,7 +30,7 @@
 
         -webkit-flex-flow: column nowrap;
         flex-flow: column nowrap;
-        justify-content: space-around;
+        justify-content: $default-justify-content;
       }
 
       @for $i from 1 through $number{
@@ -81,7 +81,7 @@
 
         -webkit-flex-flow: row wrap;
         flex-flow: row wrap;
-        justify-content: space-around;
+        justify-content: $default-justify-content;
       }
 
       .o-container-#{$prefix}--column{
@@ -97,7 +97,7 @@
 
         -webkit-flex-flow: column nowrap;
         flex-flow: column nowrap;
-        justify-content: space-around;
+        justify-content: $default-justify-content;
       }
 
       @for $i from 1 through $number{
@@ -131,7 +131,7 @@
 
         -webkit-flex-flow: row wrap;
         flex-flow: row wrap;
-        justify-content: space-around;
+        justify-content: $default-justify-content;
       }
 
       .o-container-#{$prefix}--column{
@@ -147,7 +147,7 @@
 
         -webkit-flex-flow: column nowrap;
         flex-flow: column nowrap;
-        justify-content: space-around;
+        justify-content: $default-justify-content;
       }
 
       @for $i from 1 through $number{
