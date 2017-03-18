@@ -37,6 +37,7 @@
 @if ($large-grid){
   @include generateGrid($grid-lg, $large_padding, $large_min, false, $large-flex-basis, $large-prefix);
 }
-@if ($none-grid){
-  @include generateGrid($grid-none, $none_padding, false, $none-flex-basis, false);
+@if($none-grid){
+  @include generateGrid($grid-none, $none_padding, false, false , $none-flex-basis, false);
 }
+

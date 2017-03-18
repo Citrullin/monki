@@ -1,7 +1,38 @@
-@mixin generateVerticalOffset($number, $base_padding, $type){
+@mixin getVerticalOffsetForPrefix($prefix, $number, $base_padding, $type){
+  @for $i from 1 through $number{
+    .o-voffset-#{$i}\@#{$prefix}{
+      margin-top: ($i*$base_padding)+$type;
+    }
+  }
+}
+
+@mixin getVerticalOffsetWithoutPrefix($number, $base_padding, $type){
   @for $i from 1 through $number{
     .o-voffset-#{$i}{
       margin-top: ($i*$base_padding)+$type;
+    }
+  }
+}
+
+@mixin generateVerticalOffset($number, $base_padding, $type, $prefix: false, $min-width: false, $max-width: false){
+  @if (type-of($min_width) == 'bool'){
+    @if(type-of($max_width) == 'bool'){
+      @include getVerticalOffsetWithoutPrefix($number, $base_padding, $type)
+    }
+    @else{
+      @media (max-width: $max_width){
+        @include getVerticalOffsetForPrefix($prefix, $number, $base_padding, $type)
+      }
+    }
+  }
+  @else if (type-of($max_width) == 'bool'){
+    @media (min-width: $min_width){
+      @include getVerticalOffsetForPrefix($prefix, $number, $base_padding, $type)
+    }
+  }
+  @else if (type-of($min_width) == 'number' and type_of($max_width) == 'number'){
+    @media (min-width: $min_width) and (max-width: $max_width){
+      @include getVerticalOffsetForPrefix($prefix, $number, $base_padding, $type)
     }
   }
 }

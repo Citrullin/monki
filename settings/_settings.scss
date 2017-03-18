@@ -1,13 +1,19 @@
+/*
+General:
+the word none has always the meaning: no-media-query
+If you don't need a responsive CSS set only all none variables to true.
+*/
+
 $default-justify-content: space-around;
 
 /*
-If you need specific media-queries for
+If you need a grid for specific viewports:
 xs devices -> smartphones
 small devices -> tablets
 medium devices -> notebooks
 large devices -> PC
 set these options to true.
-Will be used to generate @prefix css
+Will be used to generate .o-grid-[number]@prefix css
 You can specify also breakpoints, if you want.
 */
 $extra-small-grid: true;
@@ -51,6 +57,8 @@ $medium-flex-basis: false;
 $large-flex-basis: false;
 $none-flex-basis: false;
 
+
+
 /*
 Configure extra vertical align css for each viewport.
 Available via .o-vertical-align-[bottom|top|center|baseline]@prefix
@@ -60,6 +68,13 @@ $small-vertical-align: true;
 $medium-vertical-align: true;
 $large-vertical-align: true;
 $none-vertical-align: true;
+/*
+If you only need a general vertical align
+set this option to true and set the other to false.
+*/
+$none-vertical-align: false;
+
+
 
 /*
 Configure extra text-align css for each viewport.
@@ -72,17 +87,42 @@ $large-text-align: true;
 //Available via .o-text-align-[left|right|center]
 $none-text-align: true;
 
-/*
-If you only need a general vertical align
-set this option to true and set the other to false.
-*/
-$none-vertical-align: false;
 
-$extra-small_padding  : 10px;
-$small_padding        : 10px;
-$medium_padding       : 10px;
-$large_padding        : 10px;
-$none_padding         : 10px;
+
+$extra-small_padding  : 10;
+$small_padding        : 10;
+$medium_padding       : 10;
+$large_padding        : 10;
+$none_padding         : 10;
+
+//Set the padding type. e.g. em, px, pt
+$padding-type: px;
+
+/*
+Set vertical-offset for different viewports
+*/
+$extra-small-voffset: true;
+$small-voffset: true;
+$medium-voffset: true;
+$large-voffset: true;
+$none-voffset: false;
+
+/*
+Choose how many vertical offset multiplier you need.
+The calculation rule is: padding*multiplier
+e.g. 4 will generate:
+.o-voffset-1 margin-top = 1*padding
+.o-voffset-2 margin-top = 2*padding
+.o-voffset-3 margin-top = 3*padding
+.o-voffset-4 margin-top = 4*padding
+*/
+$extra-small-voffset-multiplier: 4;
+$small-voffset-multiplier: 4;
+$medium-voffset-multiplier: 4;
+$large-voffset-multiplier: 4;
+$none-voffset-multiplier: 4;
+
+
 
 /*
 Define your colors. Will be used in buttons, background etc.

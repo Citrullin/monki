@@ -9,8 +9,8 @@
     .o-grid-#{$i}\@#{$prefix}{
       flex: $i;
 
-      padding-right: $padding;
-      padding-left: $padding;
+      padding-right: $padding+$padding-type;
+      padding-left: $padding+$padding-type;
     }
   }
 }
@@ -26,8 +26,8 @@
     .o-grid-#{$i}{
       flex: $i;
 
-      padding-right: $padding;
-      padding-left: $padding;
+      padding-right: $padding+$padding-type;
+      padding-left: $padding+$padding-type;
     }
   }
 }
@@ -101,29 +101,28 @@
 }
 
 @mixin generateGrid($grid_number, $padding, $min_width: false, $max_width: false, $use-flex-basis: false, $prefix: false){
-  @if not($min_width){
-    @media (max-width: $max_width){
-      @include getContainerForPrefix($prefix);
-      @include getGridCSSForPrefix($prefix, $grid_number, $padding, $use-flex-basis)
+  @if (type-of($min_width) == 'bool'){
+    @if(type-of($max_width) == 'bool'){
+      @include getContainerWithoutPrefix();
+      @include getGridCSSWithoutPrefix($grid_number, $padding, $use-flex-basis)
+    }
+    @else{
+      @media (max-width: $max_width){
+        @include getContainerForPrefix($prefix);
+        @include getGridCSSForPrefix($prefix, $grid_number, $padding, $use-flex-basis)
+      }
     }
   }
-  @else if not($min_width && $max_width){
-    @include getContainerWithoutPrefix();
-    @include getGridCSSWithoutPrefix($grid_number, $padding, $use-flex-basis)
-  }
-  @else if not($max_width){
+  @else if (type-of($max_width) == 'bool'){
     @media (min-width: $min_width){
       @include getContainerForPrefix($prefix);
       @include getGridCSSForPrefix($prefix, $grid_number, $padding, $use-flex-basis)
     }
   }
-  @else if ($min_width && $max_width){
+  @else if (type-of($min_width) == 'number' and type_of($max_width) == 'number'){
     @media (min-width: $min_width) and (max-width: $max_width){
       @include getContainerForPrefix($prefix);
       @include getGridCSSForPrefix($prefix, $grid_number, $padding, $use-flex-basis)
     }
-  }
-  @else{
-
   }
 }

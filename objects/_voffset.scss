@@ -1,1 +1,34 @@
-@include generateVerticalOffset(10, 2, px);
+@if($extra-small-voffset){
+  @include generateVerticalOffset(
+                  $extra-small-voffset-multiplier,
+                  $extra-small-padding, $padding-type, $extra-small-prefix,
+                  false, $extra-small_max
+  )
+}
+@if($small-voffset){
+  @include generateVerticalOffset(
+                  $small-voffset-multiplier,
+                  $small-padding, $padding-type, $small-prefix,
+                  $small-min, $small-max
+  )
+}
+@if($medium-voffset){
+  @include generateVerticalOffset(
+                  $medium-voffset-multiplier,
+                  $medium-padding, $padding-type, $medium-prefix,
+                  $medium-min, $medium-max
+  )
+}
+@if($large-voffset){
+  @include generateVerticalOffset(
+                  $large-voffset-multiplier,
+                  $large-padding, $padding-type, $large-prefix,
+                  $large-min
+  )
+}
+@if($none-voffset){
+  @include generateVerticalOffset(
+                  $none-voffset-multiplier,
+                  $none-padding, $padding-type
+  )
+}

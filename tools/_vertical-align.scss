@@ -43,25 +43,24 @@
 }
 
 @mixin generateVerticalAlign($min_width: false, $max_width: false, $use-flex-basis: false, $prefix: false){
-  @if not($min_width){
-    @media (max-width: $max_width){
-      @include getVerticalCSSWithPrefix($prefix)
+  @if (type-of($min_width) == 'bool'){
+    @if(type-of($max_width) == 'bool'){
+      @include getVerticalCSSWithoutPrefix()
+    }
+    @else{
+      @media (max-width: $max_width){
+        @include getVerticalCSSWithPrefix($prefix)
+      }
     }
   }
-  @else if not($min_width && $max_width){
-    @include getVerticalCSSWithoutPrefix()
-  }
-  @else if not($max_width){
+  @else if (type-of($max_width) == 'bool'){
     @media (min-width: $min_width){
       @include getVerticalCSSWithPrefix($prefix)
     }
   }
-  @else if ($min_width && $max_width){
+  @else if (type-of($min_width) == 'number' and type_of($max_width) == 'number'){
     @media (min-width: $min_width) and (max-width: $max_width){
       @include getVerticalCSSWithPrefix($prefix)
     }
-  }
-  @else{
-
   }
 }
