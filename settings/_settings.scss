@@ -56,7 +56,6 @@ $large-flex-basis: false;
 $none-flex-basis: false;
 
 
-
 /*
 Configure extra vertical align css for each viewport.
 Available via .o-vertical-align-[bottom|top|center|baseline]@prefix
@@ -95,6 +94,19 @@ $none_padding         : 10;
 
 //Set the padding type. e.g. em, px, pt
 $padding-type: px;
+
+/*
+Wrapper Settings
+Multiplier will be used to calculate the wrapper padding
+e.g multiplier is 2 so the wrapper padding is 2*padding+padding-type
+*/
+$extra-small-wrapper-padding-multiplier: 1;
+$small-wrapper-padding-multiplier: 1;
+$medium-wrapper-padding-multiplier: 1;
+$large-wrapper-padding-multiplier: 2;
+$none-wrapper-padding-multiplier: 1;
+
+$wrapper-max-width: 1100px;
 
 /*
 Set vertical-offset for different viewports
