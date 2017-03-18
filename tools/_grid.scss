@@ -1,7 +1,7 @@
 @mixin generateGrid($number, $padding, $min_width: false, $max_width: false, $use-flex-basis: false, $prefix: false){
   @if not($min_width){
     @media (max-width: $max_width){
-      .o-container-#{$prefix}{
+      .o-container\@#{$prefix}{
         padding: 0;
         margin: 0;
         list-style: none;
@@ -17,7 +17,7 @@
         justify-content: $default-justify-content;
       }
 
-      .o-container-#{$prefix}--column{
+      .o-container--column\@#{$prefix}{
         padding: 0;
         margin: 0;
         list-style: none;
@@ -35,12 +35,12 @@
 
       @for $i from 1 through $number{
         @if($use-flex-basis){
-          .o-flex-basis-#{$prefix}-#{($i/$number)*100}{
+          .o-flex-basis-#{($i/$number)*100}\@#{$prefix}{
             flex-basis: ($i/$number)*100%;
           }
         }
 
-        .o-grid-#{$prefix}-#{$i}{
+        .o-grid-#{$i}\@#{$prefix}{
           flex: $i;
 
           padding-right: $padding;
@@ -68,7 +68,7 @@
   }
   @else if not($max_width){
     @media (min-width: $min_width){
-      .o-container-#{$prefix}{
+      .o-container\@#{$prefix}{
         padding: 0;
         margin: 0;
         list-style: none;
@@ -84,7 +84,7 @@
         justify-content: $default-justify-content;
       }
 
-      .o-container-#{$prefix}--column{
+      .o-container--column\@#{$prefix}{
         padding: 0;
         margin: 0;
         list-style: none;
@@ -102,12 +102,12 @@
 
       @for $i from 1 through $number{
         @if($use-flex-basis){
-          .o-flex-basis-#{$prefix}-#{($i/$number)*100}{
+          .o-flex-basis-#{($i/$number)*100}\@#{$prefix}{
             flex-basis: ($i/$number)*100%;
           }
         }
 
-        .o-grid-#{$prefix}-#{$i}{
+        .o-grid-#{$i}\@#{$prefix}{
           flex: $i;
 
           padding-right: $padding;
@@ -118,7 +118,7 @@
   }
   @else if ($min_width && $max_width){
     @media (min-width: $min_width) and (max-width: $max_width){
-      .o-container-#{$prefix}{
+      .o-container\@#{$prefix}{
         padding: 0;
         margin: 0;
         list-style: none;
@@ -134,7 +134,7 @@
         justify-content: $default-justify-content;
       }
 
-      .o-container-#{$prefix}--column{
+      .o-container--column\@#{$prefix}{
         padding: 0;
         margin: 0;
         list-style: none;
@@ -152,12 +152,12 @@
 
       @for $i from 1 through $number{
         @if($use-flex-basis){
-          .o-flex-basis-#{$prefix}-#{($i/$number)*100}{
+          .o-flex-basis-#{($i/$number)*100}\@#{$prefix}{
             flex-basis: ($i/$number)*100%;
           }
         }
 
-        .o-grid-#{$prefix}-#{$i}{
+        .o-grid-#{$i}\@#{$prefix}{
           flex: $i;
 
           padding-right: $padding;
