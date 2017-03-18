@@ -1,0 +1,51 @@
+@mixin getTextAlignWithPrefix($prefix){
+  .o-text-align-left\@#{$prefix}{
+    text-align: left;
+  }
+
+  .o-text-align-center\@#{$prefix}{
+    text-align: center;
+  }
+
+  .o-text-align-right\@#{$prefix}{
+    text-align: right;
+  }
+}
+
+@mixin getTextAlignWithoutPrefix(){
+  .o-text-align-left{
+    text-align: left;
+  }
+
+  .o-text-align-center{
+    text-align: center;
+  }
+
+  .o-text-align-right{
+    text-align: right;
+  }
+}
+
+@mixin generateTextAlign($min_width: false, $max_width: false, $prefix: false){
+  @if not($min_width){
+    @media (max-width: $max_width){
+      @include getTextAlignWithPrefix($prefix)
+    }
+  }
+  @else if not($min_width && $max_width){
+    @include getTextAlignWithoutPrefix()
+  }
+  @else if not($max_width){
+    @media (min-width: $min_width){
+      @include getTextAlignWithPrefix($prefix)
+    }
+  }
+  @else if ($min_width && $max_width){
+    @media (min-width: $min_width) and (max-width: $max_width){
+      @include getTextAlignWithPrefix($prefix)
+    }
+  }
+  @else{
+
+  }
+}

@@ -10,17 +10,25 @@
 @if($large-vertical-align){
   @include generateVerticalAlign($large_min, false, $large-flex-basis, $large-prefix)
 }
-
-.o-text-align-left{
-  text-align: left;
+@if($none-vertical-align){
+  @include generateVerticalAlign(false, false, $none-flex-basis, false)
 }
 
-.o-text-align-center{
-  text-align: center;
-}
 
-.o-text-align-right{
-  text-align: right;
+@if($extra-small-text-align){
+  @include generateTextAlign(false, $extra-small_max, $extra-small-prefix)
+}
+@if($small-text-align){
+  @include generateTextAlign($small-min, $small-max, $small-prefix)
+}
+@if($medium-text-align){
+  @include generateTextAlign($medium-min, $medium-max, $medium-prefix)
+}
+@if($large-text-align){
+  @include generateTextAlign($large_min, false, $large-prefix)
+}
+@if($none-text-align){
+  @include generateTextAlign(false, false, false)
 }
 
 .o-full-height{

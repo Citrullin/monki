@@ -53,12 +53,24 @@ $none-flex-basis: false;
 
 /*
 Configure extra vertical align css for each viewport.
-Available via .o-vertical-align-top@prefix
+Available via .o-vertical-align-[bottom|top|center|baseline]@prefix
 */
 $extra-small-vertical-align: true;
 $small-vertical-align: true;
 $medium-vertical-align: true;
 $large-vertical-align: true;
+$none-vertical-align: true;
+
+/*
+Configure extra text-align css for each viewport.
+Available via .o-text-align-[left|right|center]@prefix
+ */
+$extra-small-text-align: true;
+$small-text-align: true;
+$medium-text-align: true;
+$large-text-align: true;
+//Available via .o-text-align-[left|right|center]
+$none-text-align: true;
 
 /*
 If you only need a general vertical align
