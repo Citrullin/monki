@@ -24,18 +24,19 @@
 }
 
 //Generate Grid
-@if ($extra-small){
-  @include generateGrid($grid-xs, $extra-small_padding, false, $extra-small_max, $extra-small-flex-basis, 'xs');
+@if ($extra-small-grid){
+  @include
+  generateGrid($grid-xs, $extra-small_padding, false, $extra-small_max, $extra-small-flex-basis, $extra-small-prefix);
 }
-@if ($small){
-  @include generateGrid($grid-sm, $small_padding, $small_min, $small_max, $small-flex-basis, 'sm');
+@if ($small-grid){
+  @include generateGrid($grid-sm, $small_padding, $small_min, $small_max, $small-flex-basis, $small-prefix);
 }
-@if ($medium){
-  @include generateGrid($grid-md, $medium_padding, $medium_min, $medium_max, $medium-flex-basis, 'md');
+@if ($medium-grid){
+  @include generateGrid($grid-md, $medium_padding, $medium_min, $medium_max, $medium-flex-basis, $medium-prefix);
 }
-@if ($large){
-  @include generateGrid($grid-lg, $large_padding, $large_min, false, $large-flex-basis, 'lg');
+@if ($large-grid){
+  @include generateGrid($grid-lg, $large_padding, $large_min, false, $large-flex-basis, $large-prefix);
 }
-@if ($none){
+@if ($none-grid){
   @include generateGrid($grid-none, $none_padding, false, $none-flex-basis, false);
 }

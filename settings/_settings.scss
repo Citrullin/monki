@@ -1,10 +1,49 @@
 $default-justify-content: space-around;
 
-$extra-small: true;
-$small      : true;
-$medium     : true;
-$large      : true;
-$none       : false;
+/*
+If you need specific media-queries for
+xs devices -> smartphones
+small devices -> tablets
+medium devices -> notebooks
+large devices -> PC
+set these options to true.
+Will be used to generate @prefix css
+You can specify also breakpoints, if you want.
+*/
+$extra-small-grid: true;
+$small-grid: true;
+$medium-grid: true;
+$large-grid: true;
+/*
+If you don't need a grid system for different viewport.
+Only set none-grid to true
+*/
+$none-grid: false;
+
+/*
+Set the min and max width for each viewport.
+Will use in all media-queries
+*/
+$extra-small_max    : 768px;
+$small_min          : 769px;
+$small_max          : 992px;
+$medium_min         : 993px;
+$medium_max         : 1199px;
+$large_min          : 1200px;
+
+/*
+Set the maximal available flexbox width for each viewport
+*/
+$grid-xs: 4;
+$grid-sm: 6;
+$grid-md: 12;
+$grid-lg: 12;
+$grid-none: 12;
+
+$extra-small-prefix: "xs";
+$small-prefix: "sm";
+$medium-prefix: "md";
+$large-prefix: "lg";
 
 $extra-small-flex-basis: true;
 $small-flex-basis: false;
@@ -12,24 +51,20 @@ $medium-flex-basis: false;
 $large-flex-basis: false;
 $none-flex-basis: false;
 
+/*
+Configure extra vertical align css for each viewport.
+Available via .o-vertical-align-top@prefix
+*/
 $extra-small-vertical-align: true;
 $small-vertical-align: true;
 $medium-vertical-align: true;
 $large-vertical-align: true;
+
+/*
+If you only need a general vertical align
+set this option to true and set the other to false.
+*/
 $none-vertical-align: false;
-
-$grid-xs: 4;
-$grid-sm: 6;
-$grid-md: 12;
-$grid-lg: 12;
-$grid-none: 12;
-
-$extra-small_max    : 768px;
-$small_min          : 769px;
-$small_max          : 992px;
-$medium_min         : 993px;
-$medium_max         : 1199px;
-$large_min          : 1200px;
 
 $extra-small_padding  : 10px;
 $small_padding        : 10px;
