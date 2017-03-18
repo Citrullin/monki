@@ -1,4 +1,15 @@
-
+@if($extra-small-vertical-align){
+  @include generateVerticalAlign(false, $extra-small_max, $extra-small-flex-basis, $extra-small-prefix)
+}
+@if($small-vertical-align){
+  @include generateVerticalAlign($small_min, $small_max, $small-flex-basis, $small-prefix)
+}
+@if($medium-vertical-align){
+  @include generateVerticalAlign($medium_min, $medium-max, $medium-flex-basis, $medium-prefix)
+}
+@if($large-vertical-align){
+  @include generateVerticalAlign($large_min, false, $large-flex-basis, $large-prefix)
+}
 
 .o-text-align-left{
   text-align: left;
