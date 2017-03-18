@@ -9,14 +9,14 @@
   @include generateVerticalOffset(
                   $small-voffset-multiplier,
                   $small-padding, $padding-type, $small-prefix,
-                  $small-min, $small-max
+                  $small-min
   )
 }
 @if($medium-voffset){
   @include generateVerticalOffset(
                   $medium-voffset-multiplier,
                   $medium-padding, $padding-type, $medium-prefix,
-                  $medium-min, $medium-max
+                  $medium-min
   )
 }
 @if($large-voffset){

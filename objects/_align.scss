@@ -2,10 +2,10 @@
   @include generateVerticalAlign(false, $extra-small_max, $extra-small-flex-basis, $extra-small-prefix)
 }
 @if($small-vertical-align){
-  @include generateVerticalAlign($small_min, $small_max, $small-flex-basis, $small-prefix)
+  @include generateVerticalAlign($small_min, false, $small-flex-basis, $small-prefix)
 }
 @if($medium-vertical-align){
-  @include generateVerticalAlign($medium_min, $medium-max, $medium-flex-basis, $medium-prefix)
+  @include generateVerticalAlign($medium_min, false, $medium-flex-basis, $medium-prefix)
 }
 @if($large-vertical-align){
   @include generateVerticalAlign($large_min, false, $large-flex-basis, $large-prefix)
@@ -19,10 +19,10 @@
   @include generateTextAlign(false, $extra-small_max, $extra-small-prefix)
 }
 @if($small-text-align){
-  @include generateTextAlign($small-min, $small-max, $small-prefix)
+  @include generateTextAlign($small-min, false , $small-prefix)
 }
 @if($medium-text-align){
-  @include generateTextAlign($medium-min, $medium-max, $medium-prefix)
+  @include generateTextAlign($medium-min, false , $medium-prefix)
 }
 @if($large-text-align){
   @include generateTextAlign($large_min, false, $large-prefix)
