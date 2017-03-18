@@ -1,169 +1,126 @@
-@mixin generateGrid($number, $padding, $min_width: false, $max_width: false, $use-flex-basis: false, $prefix: false){
+@mixin getGridCSSForPrefix($prefix, $grid_number, $padding, $use-flex-basis){
+  @for $i from 1 through $grid_number{
+    @if($use-flex-basis){
+      .o-flex-basis-#{($i/$grid_number)*100}\@#{$prefix}{
+        flex-basis: ($i/$grid_number)*100%;
+      }
+    }
+
+    .o-grid-#{$i}\@#{$prefix}{
+      flex: $i;
+
+      padding-right: $padding;
+      padding-left: $padding;
+    }
+  }
+}
+
+@mixin getGridCSSWithoutPrefix($grid_number, $padding, $use-flex-basis){
+  @for $i from 1 through $grid_number{
+    @if($use-flex-basis){
+      .o-flex-basis-#{($i/$grid_number)*100}{
+        flex-basis: ($i/$grid_number)*100%;
+      }
+    }
+
+    .o-grid-#{$i}{
+      flex: $i;
+
+      padding-right: $padding;
+      padding-left: $padding;
+    }
+  }
+}
+
+@mixin getContainerForPrefix($prefix){
+  .o-container\@#{$prefix}{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    justify-content: $default-justify-content;
+  }
+
+  .o-container--column\@#{$prefix}{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    justify-content: $default-justify-content;
+  }
+}
+
+@mixin getContainerWithoutPrefix(){
+  .o-container{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    justify-content: $default-justify-content;
+  }
+
+  .o-container--column{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    justify-content: $default-justify-content;
+  }
+}
+
+@mixin generateGrid($grid_number, $padding, $min_width: false, $max_width: false, $use-flex-basis: false, $prefix: false){
   @if not($min_width){
     @media (max-width: $max_width){
-      .o-container\@#{$prefix}{
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
-        justify-content: $default-justify-content;
-      }
-
-      .o-container--column\@#{$prefix}{
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-
-        -webkit-flex-flow: column nowrap;
-        flex-flow: column nowrap;
-        justify-content: $default-justify-content;
-      }
-
-      @for $i from 1 through $number{
-        @if($use-flex-basis){
-          .o-flex-basis-#{($i/$number)*100}\@#{$prefix}{
-            flex-basis: ($i/$number)*100%;
-          }
-        }
-
-        .o-grid-#{$i}\@#{$prefix}{
-          flex: $i;
-
-          padding-right: $padding;
-          padding-left: $padding;
-        }
-      }
+      @include getContainerForPrefix($prefix);
+      @include getGridCSSForPrefix($prefix, $grid_number, $padding, $use-flex-basis)
     }
   }
   @else if not($min_width && $max_width){
-
-    @for $i from 1 through $number{
-      @if($use-flex-basis){
-        .o-flex-basis-#{($i/$number)*100}{
-          flex-basis: ($i/$number)*100%;
-        }
-      }
-
-      .o-grid-#{$i}{
-        flex: $i;
-
-        padding-right: $padding;
-        padding-left: $padding;
-      }
-    }
+    @include getContainerWithoutPrefix();
+    @include getGridCSSWithoutPrefix($grid_number, $padding, $use-flex-basis)
   }
   @else if not($max_width){
     @media (min-width: $min_width){
-      .o-container\@#{$prefix}{
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
-        justify-content: $default-justify-content;
-      }
-
-      .o-container--column\@#{$prefix}{
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-
-        -webkit-flex-flow: column nowrap;
-        flex-flow: column nowrap;
-        justify-content: $default-justify-content;
-      }
-
-      @for $i from 1 through $number{
-        @if($use-flex-basis){
-          .o-flex-basis-#{($i/$number)*100}\@#{$prefix}{
-            flex-basis: ($i/$number)*100%;
-          }
-        }
-
-        .o-grid-#{$i}\@#{$prefix}{
-          flex: $i;
-
-          padding-right: $padding;
-          padding-left: $padding;
-        }
-      }
+      @include getContainerForPrefix($prefix);
+      @include getGridCSSForPrefix($prefix, $grid_number, $padding, $use-flex-basis)
     }
   }
   @else if ($min_width && $max_width){
     @media (min-width: $min_width) and (max-width: $max_width){
-      .o-container\@#{$prefix}{
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
-        justify-content: $default-justify-content;
-      }
-
-      .o-container--column\@#{$prefix}{
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-
-        -webkit-flex-flow: column nowrap;
-        flex-flow: column nowrap;
-        justify-content: $default-justify-content;
-      }
-
-      @for $i from 1 through $number{
-        @if($use-flex-basis){
-          .o-flex-basis-#{($i/$number)*100}\@#{$prefix}{
-            flex-basis: ($i/$number)*100%;
-          }
-        }
-
-        .o-grid-#{$i}\@#{$prefix}{
-          flex: $i;
-
-          padding-right: $padding;
-          padding-left: $padding;
-        }
-      }
+      @include getContainerForPrefix($prefix);
+      @include getGridCSSForPrefix($prefix, $grid_number, $padding, $use-flex-basis)
     }
   }
   @else{
