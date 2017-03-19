@@ -1,4 +1,9 @@
 @mixin getVerticalPaddingWithoutPrefix($number, $base_padding, $type){
+  .o-vpadding-zero{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   @for $i from 1 through $number{
     .o-vpadding-#{$i}{
       padding-top: ($base_padding*$i)+$type;
@@ -8,6 +13,11 @@
 }
 
 @mixin getVerticalPaddingWithPrefix($prefix, $number, $base_padding, $type){
+  .o-vpadding-zero\@#{$prefix}{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   @for $i from 1 through $number{
     .o-vpadding-#{$i}\@#{$prefix}{
       padding-top: ($base_padding*$i)+$type;
