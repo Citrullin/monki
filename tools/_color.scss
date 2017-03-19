@@ -1,5 +1,5 @@
 @mixin generateColor($name-prefix, $base-color, $light-color, $lighter-color, $dark-color, $darker-color){
-  .o-#{$name-prefix}{
+  .o-color-#{$name-prefix}{
     color: $base-color;
 
     &-light{
