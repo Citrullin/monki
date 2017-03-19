@@ -3,7 +3,19 @@
     font-size: $default-font-size;
   }
 
-  &-medium{
+  &-small{
+    font-size: $font-size-small;
+  }
 
+  &-extra-small{
+    font-size: $font-size-extra-small;
+  }
+
+  &-medium{
+    font-size: $font-size-medium;
+  }
+
+  &-large{
+    font-size: $font-size-large;
   }
 }
