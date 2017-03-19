@@ -1,6 +1,10 @@
 @mixin getVerticalOffsetForPrefix($prefix, $number, $base_padding, $type){
   @for $i from 1 through $number{
-    .o-voffset-#{$i}\@#{$prefix}{
+    .o-voffset-top-#{$i}\@#{$prefix}{
+      margin-top: ($i*$base_padding)+$type;
+    }
+
+    .o-voffset-bottom-#{$i}\@#{$prefix}{
       margin-top: ($i*$base_padding)+$type;
     }
   }
@@ -8,7 +12,11 @@
 
 @mixin getVerticalOffsetWithoutPrefix($number, $base_padding, $type){
   @for $i from 1 through $number{
-    .o-voffset-#{$i}{
+    .o-voffset-top-#{$i}{
+      margin-top: ($i*$base_padding)+$type;
+    }
+
+    .o-voffset-bottom-#{$i}{
       margin-top: ($i*$base_padding)+$type;
     }
   }

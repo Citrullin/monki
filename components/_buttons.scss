@@ -5,6 +5,13 @@
   border-radius: 3px;
   border-left: 0;
   border-top: 0;
+  padding: #{$extra-small-padding/2+$padding-type} #{$extra-small-padding+$padding-type};
+}
+
+.c-button--grey{
+  color: $bright-lighter;
+  background: $grey-light;
+  border-bottom: 2px solid $grey;
 }
 
 .c-button--brand{
