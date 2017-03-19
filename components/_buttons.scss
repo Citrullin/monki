@@ -6,30 +6,30 @@
   border-left: 0;
   border-top: 0;
   padding: #{$extra-small-padding/2+$padding-type} #{$extra-small-padding+$padding-type};
-}
 
-.c-button--grey{
-  color: $bright-lighter;
-  background: $grey-light;
-  border-bottom: 2px solid $grey;
-}
+  &--grey{
+    color: $bright-lighter;
+    background: $grey-light;
+    border-bottom: 2px solid $grey;
+  }
 
-.c-button--brand{
-  background: $brand-color;
-  border-bottom: 2px solid $brand-darker-color;
-}
+  &--brand{
+    background: $brand-color;
+    border-bottom: 2px solid $brand-darker-color;
+  }
 
-.c-button--success{
-  background: $success-color;
-  border-bottom: 2px solid $success-darker-color;
-}
+  &--success{
+    background: $success-color;
+    border-bottom: 2px solid $success-darker-color;
+  }
 
-.c-button--warn{
-  background: $warn-color;
-  border-bottom: 2px solid $warn-darker-color;
-}
+  &--warn{
+    background: $warn-color;
+    border-bottom: 2px solid $warn-darker-color;
+  }
 
-.c-button--danger{
-  background: $danger-color;
-  border-bottom: 2px solid $danger-darker-color;
+ &--danger{
+   background: $danger-color;
+   border-bottom: 2px solid $danger-darker-color;
+ }
 }

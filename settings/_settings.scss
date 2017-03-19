@@ -117,6 +117,16 @@ $large-voffset: true;
 $none-voffset: false;
 
 /*
+Set vertical-paddings for different viewports
+*/
+$extra-small-vpadding: true;
+$small-vpadding: true;
+$medium-vpadding: true;
+$large-vpadding: true;
+$none-vpadding: false;
+
+
+/*
 Choose how many vertical offset multiplier you need.
 The calculation rule is: padding*multiplier
 e.g. 4 will generate:
@@ -131,6 +141,12 @@ $medium-voffset-multiplier: 4;
 $large-voffset-multiplier: 4;
 $none-voffset-multiplier: 4;
 
+/*Same as vertical offset multiplier*/
+$extra-small-vpadding-multiplier: 4;
+$small-vpadding-multiplier: 4;
+$medium-vpadding-multiplier: 4;
+$large-vpadding-multiplier: 4;
+$none-vpadding-multiplier: 4;
 
 
 /*
