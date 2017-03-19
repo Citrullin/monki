@@ -82,20 +82,20 @@
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     justify-content: $default-justify-content;
-  }
 
-  .o-container--column{
-    list-style: none;
+    &--column{
+      list-style: none;
 
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
 
-    -webkit-flex-flow: column nowrap;
-    flex-flow: column nowrap;
-    justify-content: $default-justify-content;
+      -webkit-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+      justify-content: $default-justify-content;
+    }
   }
 }
 
