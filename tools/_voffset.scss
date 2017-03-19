@@ -14,15 +14,13 @@
   }
 }
 
-@mixin generateVerticalOffset($number, $base_padding, $type, $prefix: false, $min-width: false, $max-width: false){
+@mixin generateVerticalOffset($number, $base_padding, $type, $prefix: false, $min-width: false, $max-width: false, $none:false){
   @if (type-of($min_width) == 'bool'){
-    @if(type-of($max_width) == 'bool'){
+    @if($none){
       @include getVerticalOffsetWithoutPrefix($number, $base_padding, $type)
     }
     @else{
-      @media (max-width: $max_width){
         @include getVerticalOffsetForPrefix($prefix, $number, $base_padding, $type)
-      }
     }
   }
   @else if (type-of($max_width) == 'bool'){

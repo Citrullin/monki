@@ -1,5 +1,5 @@
 @if($extra-small-vertical-align){
-  @include generateVerticalAlign(false, $extra-small_max, $extra-small-flex-basis, $extra-small-prefix)
+  @include generateVerticalAlign(false, false, $extra-small-flex-basis, $extra-small-prefix)
 }
 @if($small-vertical-align){
   @include generateVerticalAlign($small_min, false, $small-flex-basis, $small-prefix)
@@ -11,12 +11,12 @@
   @include generateVerticalAlign($large_min, false, $large-flex-basis, $large-prefix)
 }
 @if($none-vertical-align){
-  @include generateVerticalAlign(false, false, $none-flex-basis, false)
+  @include generateVerticalAlign(false, false, $none-flex-basis, false, true)
 }
 
 
 @if($extra-small-text-align){
-  @include generateTextAlign(false, $extra-small_max, $extra-small-prefix)
+  @include generateTextAlign(false, false, $extra-small-prefix)
 }
 @if($small-text-align){
   @include generateTextAlign($small-min, false , $small-prefix)
@@ -28,7 +28,7 @@
   @include generateTextAlign($large_min, false, $large-prefix)
 }
 @if($none-text-align){
-  @include generateTextAlign(false, false, false)
+  @include generateTextAlign(false, false, false, true)
 }
 
 .o-full-height{

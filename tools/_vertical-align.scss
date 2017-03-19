@@ -42,15 +42,14 @@
   }
 }
 
-@mixin generateVerticalAlign($min_width: false, $max_width: false, $use-flex-basis: false, $prefix: false){
+@mixin
+generateVerticalAlign($min_width: false, $max_width: false, $use-flex-basis: false, $prefix: false, $none: false){
   @if (type-of($min_width) == 'bool'){
-    @if(type-of($max_width) == 'bool'){
+    @if($none){
       @include getVerticalCSSWithoutPrefix()
     }
     @else{
-      @media (max-width: $max_width){
-        @include getVerticalCSSWithPrefix($prefix)
-      }
+      @include getVerticalCSSWithPrefix($prefix)
     }
   }
   @else if (type-of($max_width) == 'bool'){

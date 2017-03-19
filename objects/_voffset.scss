@@ -1,8 +1,7 @@
 @if($extra-small-voffset){
   @include generateVerticalOffset(
                   $extra-small-voffset-multiplier,
-                  $extra-small-padding, $padding-type, $extra-small-prefix,
-                  false, $extra-small_max
+                  $extra-small-padding, $padding-type, $extra-small-prefix
   )
 }
 @if($small-voffset){
@@ -29,6 +28,6 @@
 @if($none-voffset){
   @include generateVerticalOffset(
                   $none-voffset-multiplier,
-                  $none-padding, $padding-type
+                  $none-padding, $padding-type, true
   )
 }

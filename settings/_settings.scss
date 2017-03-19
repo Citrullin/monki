@@ -30,9 +30,8 @@ $none-grid: false;
 Set the min and max width for each viewport.
 Will use in all media-queries
 */
-$extra-small_max    : 768px;
-$small_min          : 769px;
-$medium_min         : 993px;
+$small_min          : 768px;
+$medium_min         : 992px;
 $large_min          : 1200px;
 
 /*
@@ -64,7 +63,7 @@ $extra-small-vertical-align: true;
 $small-vertical-align: true;
 $medium-vertical-align: true;
 $large-vertical-align: true;
-$none-vertical-align: true;
+$none-vertical-align: false;
 /*
 If you only need a general vertical align
 set this option to true and set the other to false.
@@ -82,7 +81,7 @@ $small-text-align: true;
 $medium-text-align: true;
 $large-text-align: true;
 //Available via .o-text-align-[left|right|center]
-$none-text-align: true;
+$none-text-align: false;
 
 
 

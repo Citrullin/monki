@@ -34,7 +34,7 @@
   generateGrid(
                   $grid-xs, $extra-small_padding,
                   $extra-small-wrapper-padding-multiplier, false,
-                  $extra-small_max, $extra-small-flex-basis,
+                  false, $extra-small-flex-basis,
                   $extra-small-prefix
   );
 }
@@ -63,7 +63,8 @@
   @include generateGrid(
                   $grid-none, $none_padding,
                   $none-wrapper-padding-multiplier,
-                  false, false , $none-flex-basis, false
+                  false, false , $none-flex-basis,
+                  false, true
   );
 }
 

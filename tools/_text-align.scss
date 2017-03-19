@@ -26,15 +26,13 @@
   }
 }
 
-@mixin generateTextAlign($min_width: false, $max_width: false, $prefix: false){
+@mixin generateTextAlign($min_width: false, $max_width: false, $prefix: false, $none: false){
   @if (type-of($min_width) == 'bool'){
-    @if(type-of($max_width) == 'bool'){
+    @if($none){
       @include getTextAlignWithoutPrefix()
     }
     @else{
-      @media (max-width: $max_width){
         @include getTextAlignWithPrefix($prefix)
-      }
     }
   }
   @else if (type-of($max_width) == 'bool'){

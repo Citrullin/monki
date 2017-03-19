@@ -107,18 +107,22 @@
   }
 }
 
-@mixin generateGrid($grid_number, $padding, $wrapper-multiplier, $min_width: false, $max_width: false, $use-flex-basis: false, $prefix: false){
+@mixin
+generateGrid(
+  $grid_number, $padding, $wrapper-multiplier,
+  $min_width: false, $max_width: false,
+  $use-flex-basis: false, $prefix: false,
+  $none: false
+){
   @if (type-of($min_width) == 'bool'){
-    @if(type-of($max_width) == 'bool'){
+    @if($none){
       @include getContainerWithoutPrefix();
       @include getGridCSSWithoutPrefix($grid_number, $padding, $use-flex-basis)
     }
     @else{
-      @media (max-width: $max_width){
         @include getWrapperWithPadding($padding*$wrapper-multiplier+$padding-type);
         @include getContainerForPrefix($prefix);
         @include getGridCSSForPrefix($prefix, $grid_number, $padding, $use-flex-basis)
-      }
     }
   }
   @else if (type-of($max_width) == 'bool'){
