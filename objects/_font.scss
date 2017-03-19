@@ -1,3 +1,9 @@
-.o-font-size-default{
-  font-size: 14px;
+.o-font-size{
+  &-default{
+    font-size: $default-font-size;
+  }
+
+  &-medium{
+
+  }
 }
