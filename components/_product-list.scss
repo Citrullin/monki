@@ -1,0 +1,42 @@
+.c-product-category-list{
+
+
+  &__item{
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+
+    flex-basis: 14rem;
+  }
+
+  &__headline{
+    font-size: 0.9rem;
+    height: 2.3rem;
+  }
+
+  &__price{
+    font-size: 1.3rem;
+    margin-top: 0.3rem;
+  }
+
+  &__origin{
+    font-size: 0.6rem;
+  }
+
+  &__image{
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    width: 100%;
+    height: auto;
+  }
+
+  &__image-container{
+
+  }
+
+  &__info-container{
+    padding: 0.5rem;
+  }
+}

@@ -1,0 +1,9 @@
+.header{
+  background: $bright-lighter;
+  height: 5rem;
+  padding: 0;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+  z-index: 99;
+  //position: fixed;
+}
