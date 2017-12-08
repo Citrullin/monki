@@ -1,0 +1,17 @@
+footer{
+  background: $grey-darker;
+  color: $bright-lighter;
+  padding: #{$large_padding+$padding-type};
+}
+
+.c-footer{
+  &__column{
+    margin-right: #{$large_padding + $padding-type}
+  }
+
+  &__item{
+    a{
+      color: $bright-lighter;
+    }
+  }
+}

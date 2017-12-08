@@ -85,11 +85,11 @@ $none-text-align: false;
 
 
 
-$extra-small_padding  : 10;
+$extra-small_padding  : 5;
 $small_padding        : 10;
-$medium_padding       : 10;
-$large_padding        : 10;
-$none_padding         : 10;
+$medium_padding       : 15;
+$large_padding        : 20;
+$none_padding         : 0;
 
 //Set the padding type. e.g. em, px, pt
 $padding-type: px;
