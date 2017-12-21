@@ -1,0 +1,13 @@
+//Generate Grid
+@if ($extra-small-visibility){
+  @include generateVisibility(false, $small-min, $extra-small-prefix);
+}
+@if ($small-visibility){
+  @include generateVisibility($small_min, $medium_min, $small-prefix);
+}
+@if ($medium-visibility){
+  @include generateVisibility($medium_min, $large_min, $medium-prefix);
+}
+@if ($large-visibility){
+  @include generateVisibility($large_min, false, $large-prefix);
+}

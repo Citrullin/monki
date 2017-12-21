@@ -1,0 +1,33 @@
+@if($extra-small-vpadding){
+  @include generateHorizontalPadding(
+                  $extra-small-padding-multiplier,
+                  $extra-small-padding, $padding-type, $extra-small-prefix
+  )
+}
+@if($small-vpadding){
+  @include generateHorizontalPadding(
+                  $small-padding-multiplier,
+                  $small-padding, $padding-type, $small-prefix,
+                  $small-min
+  )
+}
+@if($medium-vpadding){
+  @include generateHorizontalPadding(
+                  $medium-padding-multiplier,
+                  $medium-padding, $padding-type, $medium-prefix,
+                  $medium-min
+  )
+}
+@if($large-vpadding){
+  @include generateHorizontalPadding(
+                  $large-padding-multiplier,
+                  $large-padding, $padding-type, $large-prefix,
+                  $large-min
+  )
+}
+@if($none-vpadding){
+  @include generateHorizontalPadding(
+                  $none-padding-multiplier,
+                  $none-padding, $padding-type, true
+  )
+}

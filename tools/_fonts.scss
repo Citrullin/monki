@@ -1,0 +1,52 @@
+@mixin getFontSizeForPrefix($prefix){
+  .o-font-size{
+    &-default\@#{$prefix}{
+      font-size: $default-font-size;
+    }
+
+    &-small\@#{$prefix}{
+      font-size: $font-size-small;
+    }
+
+    &-extra-smal\@#{$prefix}{
+      font-size: $font-size-extra-small;
+    }
+
+    &-medium\@#{$prefix}{
+      font-size: $font-size-medium;
+    }
+
+    &-large\@#{$prefix}{
+      font-size: $font-size-large;
+    }
+
+    &-extra-large\@#{$prefix}{
+      font-size: $font-size-extra-large;
+    }
+
+    &-huge\@#{$prefix}{
+      font-size: $font-size-huge;
+    }
+  }
+}
+
+
+@mixin
+generateFontSizes(
+  $min_width: false, $max_width: false,
+  $prefix: false
+){
+  @if (type-of($min_width) == 'bool'){
+    @include getFontSizeForPrefix($prefix)
+  }
+  @else if (type-of($max_width) == 'bool'){
+    @media (min-width: $min_width){
+      @include getFontSizeForPrefix($prefix)
+    }
+  }
+  @else if (type-of($min_width) == 'number' and type_of($max_width) == 'number'){
+    @media (min-width: $min_width) and (max-width: $max_width){
+      @include getFontSizeForPrefix($prefix)
+    }
+  }
+}

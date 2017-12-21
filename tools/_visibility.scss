@@ -1,0 +1,28 @@
+@mixin getVisibilityWithPrefix($prefix) {
+  .o-visibility-hidden\@#{$prefix}{
+    display: none;
+  }
+
+  .o-visibility-show\@#{$prefix}{
+    display: block;
+  }
+}
+
+@mixin
+generateVisibility($min_width: false, $max_width: false, $prefix: false){
+  @if (type-of($min_width) == 'bool'){
+    @media (max-width: $max_width) {
+      @include getVisibilityWithPrefix($prefix)
+    }
+  }
+  @else if (type-of($max_width) == 'bool'){
+    @media (min-width: $min_width){
+      @include getVisibilityWithPrefix($prefix)
+    }
+  }
+  @else if (type-of($min_width) == 'number' and type_of($max_width) == 'number'){
+    @media (min-width: $min_width) and (max-width: $max_width){
+      @include getVisibilityWithPrefix($prefix)
+    }
+  }
+}

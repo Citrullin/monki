@@ -67,12 +67,3 @@
                   $large_min, false, $large-flex-basis, $large-prefix
   );
 }
-@if($none-grid){
-  @include generateGrid(
-                  $grid-none, $none_padding,
-                  $none-wrapper-padding-multiplier,
-                  false, false , $none-flex-basis,
-                  false, true
-  );
-}
-

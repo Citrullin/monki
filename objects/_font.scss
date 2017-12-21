@@ -1,21 +1,31 @@
-.o-font-size{
-  &-default{
-    font-size: $default-font-size;
-  }
-
-  &-small{
-    font-size: $font-size-small;
-  }
-
-  &-extra-small{
-    font-size: $font-size-extra-small;
-  }
-
-  &-medium{
-    font-size: $font-size-medium;
-  }
-
-  &-large{
-    font-size: $font-size-large;
-  }
+@if ($extra-small-grid){
+  @include
+  generateFontSizes(false, false, $extra-small-prefix);
 }
+@if ($small-grid){
+  @include generateFontSizes($small_min, false, $small-prefix);
+}
+@if ($medium-grid){
+  @include generateFontSizes($medium_min, false, $medium-prefix);
+}
+@if ($large-grid){
+  @include generateFontSizes($large_min, false, $large-prefix);
+}
+
+
+.o-font-stint-pro--book {
+  font-family: 'Stint Pro Book';
+}
+
+.o-font-newlab--light{
+  font-family: 'NewslabLight';
+}
+
+.o-font-newlab--light{
+  font-family: 'NewslabLight';
+}
+
+.o-font-newlab--bold{
+  font-family: 'NewslabBold';
+}
+

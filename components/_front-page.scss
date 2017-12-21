@@ -1,0 +1,52 @@
+.c-image-left-frontpage{
+  background-image: url("img/guy-tower.jpeg");
+  background-size: 100%;
+
+  //XS
+  @media (max-width: $small_min){
+    height: 24rem;
+  }
+
+  //S
+  @media (min-width: $small_min) and (max-width: $medium_min){
+    height: 27rem;
+  }
+
+  //M
+  @media (min-width: $medium_min) and (max-width: $large_min){
+    height: 20rem;
+  }
+
+  //L
+  //M
+  @media (min-width: $large_min){
+    height: 40rem;
+  }
+}
+
+@media (min-width: $medium_min){
+  .c-image-right-container{
+    margin-left: $extra-small-padding + $padding-type;
+  }
+}
+
+
+
+.c-image-right-top{
+  background-image: url("img/people-together-marketing.jpeg");
+  background-size: 100%;
+  height: 20rem;
+}
+
+.c-image-right-bottom{
+  background-image: url("img/man-wall-mockups.jpeg");
+  background-size: 100%;
+  height: 20rem;
+}
+
+.c-signup-button{
+  &--large{
+    padding: 0.8rem;
+    font-size: 1.4rem;
+  }
+}

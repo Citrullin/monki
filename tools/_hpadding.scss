@@ -1,0 +1,48 @@
+@mixin getHorizontalPaddingWithoutPrefix($number, $base_padding, $type){
+  .o-hpadding-zero{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @for $i from 1 through $number{
+    .o-hpadding-#{$i}{
+      padding-left: ($base_padding*$i)+$type;
+      padding-right: ($base_padding*$i)+$type;
+    }
+  }
+}
+
+@mixin getHorizontalPaddingWithPrefix($prefix, $number, $base_padding, $type){
+  .o-hpadding-zero\@#{$prefix}{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @for $i from 1 through $number{
+    .o-hpadding-#{$i}\@#{$prefix}{
+      padding-left: ($base_padding*$i)+$type;
+      padding-right: ($base_padding*$i)+$type;
+    }
+  }
+}
+
+@mixin generateHorizontalPadding($number, $base_padding, $type, $prefix: false, $min-width: false, $max-width: false, $none:false){
+  @if (type-of($min_width) == 'bool'){
+    @if($none){
+      @include getHorizontalPaddingWithoutPrefix($number, $base_padding, $type)
+    }
+    @else{
+      @include getHorizontalPaddingWithPrefix($prefix, $number, $base_padding, $type)
+    }
+  }
+  @else if (type-of($max_width) == 'bool'){
+    @media (min-width: $min_width){
+      @include getHorizontalPaddingWithPrefix($prefix, $number, $base_padding, $type)
+    }
+  }
+  @else if (type-of($min_width) == 'number' and type_of($max_width) == 'number'){
+    @media (min-width: $min_width) and (max-width: $max_width){
+      @include getHorizontalPaddingWithPrefix($prefix, $number, $base_padding, $type)
+    }
+  }
+}

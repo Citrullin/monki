@@ -1,4 +1,8 @@
-main{
-  margin-top: 1.7rem;
+.c-main--top-padding{
+  padding-top: #{2*0.8+2.2}rem;
+}
+
+.c-main{
   width: 100%;
 }
+

@@ -1,9 +1,32 @@
-.header{
-  background: $bright-lighter;
-  height: 5rem;
-  padding: 0;
-  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+.c-sticky-header{
+  top: 0;
   z-index: 99;
-  //position: fixed;
+  position: fixed;
+  width: 100%;
+
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-property: background-color,-webkit-box-shadow;
+  transition-property: background-color,-webkit-box-shadow;
+  transition-property: background-color,box-shadow;
+  transition-property: background-color,box-shadow,-webkit-box-shadow;
+
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+
+  &--visible{
+    -webkit-box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  }
+}
+
+.c-header{
+  height: 3.5rem;
+  padding: 0;
+
+  &__login{
+    &--no-display{
+      display: none;
+    }
+  }
 }

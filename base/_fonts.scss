@@ -37,3 +37,29 @@
   url('/fonts/addington/AddingtonCF-RegularItalic.woff2') format('woff2'),
   url('/fonts/addington/AddingtonCF-RegularItalic.woff') format('woff')
 }
+
+@font-face {
+  font-family: 'Visby CF';
+  src: url('/fonts/Visby/VisbyCF-Regular.eot');
+  src: url('/fonts/Visby/VisbyCF-Regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Visby/VisbyCF-Regular.woff2') format('woff2'),
+  url('/fonts/Visby/VisbyCF-Regular.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'Stint Pro Book';
+  src: url('/fonts/stintpro/Stint-Pro-Book.woff2') format('woff2'),
+  url('/fonts/stintpro/Stint-Pro-Book.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'NewslabLight';
+  src: url('/fonts/newslab/NewslabLight.woff2') format('woff2'),
+  url('/fonts/newslab/NewslabLight.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'NewslabBold';
+  src: url('/fonts/newslab/NewslabBold.woff2') format('woff2'),
+  url('/fonts/newslab/NewslabBold.woff') format('woff')
+}

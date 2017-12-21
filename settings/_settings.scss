@@ -125,6 +125,11 @@ $medium-vpadding: true;
 $large-vpadding: true;
 $none-vpadding: false;
 
+$extra-small-visibility: true;
+$small-visibility: true;
+$medium-visibility: true;
+$large-visibility: true;
+
 
 /*
 Choose how many vertical offset multiplier you need.
@@ -135,18 +140,18 @@ e.g. 4 will generate:
 .o-voffset-3 margin-top = 3*padding
 .o-voffset-4 margin-top = 4*padding
 */
-$extra-small-voffset-multiplier: 4;
-$small-voffset-multiplier: 4;
-$medium-voffset-multiplier: 4;
-$large-voffset-multiplier: 4;
-$none-voffset-multiplier: 4;
+$extra-small-offset-multiplier: 4;
+$small-offset-multiplier: 4;
+$medium-offset-multiplier: 4;
+$large-offset-multiplier: 4;
+$none-offset-multiplier: 4;
 
 /*Same as vertical offset multiplier*/
-$extra-small-vpadding-multiplier: 4;
-$small-vpadding-multiplier: 4;
-$medium-vpadding-multiplier: 4;
-$large-vpadding-multiplier: 4;
-$none-vpadding-multiplier: 4;
+$extra-small-padding-multiplier: 4;
+$small-padding-multiplier: 4;
+$medium-padding-multiplier: 4;
+$large-padding-multiplier: 6;
+$none-padding-multiplier: 4;
 
 
 /*
@@ -173,14 +178,14 @@ $danger-dark-color:     #BF8775;
 $danger-darker-color:   #A64628;
 $danger-light-color:    #FFB49C;
 $danger-lighter-color:  #FFC8B6;
-$grey-darker:           #323234;
+$grey-darker:           #454545;
 $grey-dark:             lighten(#323234, 10%);
 $grey:                  lighten(#323234, 20%);
 $grey-light:            lighten(#323234, 30%);
 $grey-lighter:          lighten(#323234, 40%);
 
 $bright-lighter:  #fff;
-$bright-light:    darken($bright-lighter, 10%);
+$bright-light:    darken($bright-lighter, 5%);
 $bright:          darken($bright-lighter, 15%);
 $bright-dark:     darken($bright-lighter, 20%);
 $bright-darker:   darken($bright-lighter, 25%);
@@ -189,14 +194,14 @@ $bright-darker:   darken($bright-lighter, 25%);
 /*Font Configurations*/
 $headline-color: $grey-darker;
 $headline-margin-bottom: 5px;
-$headline-font-family: Arial;
-$headline-font-weight: bolder;
+$headline-font-family: 'NewslabLight';
+$headline-font-weight: normal;
 
 $h1-size: 34px;
 $h2-size: 30px;
 $h3-size: 26px;
 $h4-size: 22px;
-$h5-size: 18px;
+$h5-size: 1.1rem;
 $h6-size: 14px;
 
 $default-font-family: Arial;
@@ -205,8 +210,11 @@ $default-font-color: $grey-darker;
 $font-size-extra-small: 10px;
 $font-size-small: 12px;
 $default-font-size: 14px;
-$font-size-medium: 16px;
-$font-size-large: 18px;
+$font-size-medium: 1.8rem;
+$font-size-large: 2.5rem;
+$font-size-extra-large: 4rem;
+$font-size-huge: 6rem;
+
 
 $bold-font-family: Arial;
 $bold-font-weight: bolder;

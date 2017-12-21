@@ -1,0 +1,42 @@
+
+
+.c-box{
+  padding: $medium_padding + $padding-type;
+  color: #fff;
+
+  &--danger-color{
+    background: $danger-color;
+    &-light{
+      background: $danger-light-color;
+    }
+  }
+
+  &--success-color{
+    background: $success-color;
+    &-light{
+      background: $success-light-color;
+    }
+  }
+
+  &--brand-color{
+    background: $brand-color;
+    &-light{
+      background: $brand-light-color;
+    }
+
+    &-lighter{
+      background: $brand-lighter-color;
+    }
+  }
+
+  &--warn-color{
+    background: $warn-color;
+    &-light{
+      background: $warn-light-color;
+    }
+
+    &-lighter{
+      background: $warn-lighter-color;
+    }
+  }
+}

@@ -1,33 +1,33 @@
 @if($extra-small-voffset){
   @include generateVerticalOffset(
-                  $extra-small-voffset-multiplier,
+                  $extra-small-offset-multiplier,
                   $extra-small-padding, $padding-type, $extra-small-prefix
   )
 }
 @if($small-voffset){
   @include generateVerticalOffset(
-                  $small-voffset-multiplier,
+                  $small-offset-multiplier,
                   $small-padding, $padding-type, $small-prefix,
                   $small-min
   )
 }
 @if($medium-voffset){
   @include generateVerticalOffset(
-                  $medium-voffset-multiplier,
+                  $medium-offset-multiplier,
                   $medium-padding, $padding-type, $medium-prefix,
                   $medium-min
   )
 }
 @if($large-voffset){
   @include generateVerticalOffset(
-                  $large-voffset-multiplier,
+                  $large-offset-multiplier,
                   $large-padding, $padding-type, $large-prefix,
                   $large-min
   )
 }
 @if($none-voffset){
   @include generateVerticalOffset(
-                  $none-voffset-multiplier,
+                  $none-offset-multiplier,
                   $none-padding, $padding-type, true
   )
 }

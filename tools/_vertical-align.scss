@@ -1,4 +1,8 @@
 @mixin getVerticalCSSWithoutPrefix(){
+  .o-push-bottom{
+    margin-top: auto;
+  }
+
   .o-vertical-align-top{
     -webkit-align-items: flex-start;
     align-items: flex-start;
@@ -42,6 +46,14 @@
 }
 
 @mixin getVerticalCSSWithPrefix($prefix){
+  .o-push-bottom\@#{$prefix}{
+    margin-top: auto;
+  }
+
+  .o-push-none\@#{$prefix}{
+    margin-top: 0;
+  }
+
   .o-vertical-align-top\@#{$prefix}{
     -webkit-align-items: flex-start;
     align-items: flex-start;
